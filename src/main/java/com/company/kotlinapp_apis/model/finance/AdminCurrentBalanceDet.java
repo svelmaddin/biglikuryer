@@ -19,5 +19,7 @@ public class AdminCurrentBalanceDet {
 
     private Integer price;
     private String date;
+    private Long courierId; //
+    private Long shopId; //
     private String time;
 }

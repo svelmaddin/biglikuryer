@@ -16,8 +16,9 @@ public class CourierCurrentBalanceDet {
 
     @Id
     private Long id;
-
     private Integer price;
     private String date;
+    private Long courierId; //
+    private Long shopId; //
     private String time;
 }

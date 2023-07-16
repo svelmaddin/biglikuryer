@@ -13,6 +13,8 @@ public class AdminCurrentBalanceDetDto {
 
     private Long id;
     private Integer price;
+    private Long courierId; //
+    private Long shopId; //
     private String date;
     private String time;
 }
