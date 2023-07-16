@@ -27,11 +27,10 @@ public class Courier {
 
     private String phoneNumber;
 
-    private Integer currentBalance;
-
     private String location;
 
     private String familyPhoneNumber;
+    private Boolean star; //
 
     private String oneSignal;//deviceId
 

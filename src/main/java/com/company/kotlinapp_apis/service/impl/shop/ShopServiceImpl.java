@@ -26,7 +26,7 @@ public class ShopServiceImpl implements ShopServiceInter {
     @Override
     public ResponseEntity<ShopDto> createShop(ShopDto shopDto) {
         Shop shopEntity = modelMapper.map(shopDto, Shop.class);
-        if(isShopEmailTaken(shopEntity.getEmail())) {
+        if (isShopEmailTaken(shopEntity.getEmail())) {
             return ResponseEntity.badRequest().build();
         }
         shopEntity.setIsDisable(false);
@@ -66,7 +66,7 @@ public class ShopServiceImpl implements ShopServiceInter {
     @Override
     public ShopDto findShopByEmail(String email) {
         Shop shop = shopRepository.findShopByEmail(email);
-        if(shop != null) {
+        if (shop != null) {
             return modelMapper.map(shop, ShopDto.class);
         }
         return null;
@@ -95,6 +95,9 @@ public class ShopServiceImpl implements ShopServiceInter {
             }
             if (shopDto.getOneSignal() != null) {
                 shop.setOneSignal(shopDto.getOneSignal());
+            }
+            if (shopDto.getCard() != null) {
+                shop.setCard(shopDto.getCard());
             }
             if (shopDto.getEmail() != null) {
                 shop.setEmail(shopDto.getEmail());

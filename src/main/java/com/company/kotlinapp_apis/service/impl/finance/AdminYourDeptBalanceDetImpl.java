@@ -2,7 +2,7 @@ package com.company.kotlinapp_apis.service.impl.finance;
 
 import com.company.kotlinapp_apis.dao.finance.AdminYourDeptBalanceDetRepository;
 import com.company.kotlinapp_apis.dto.finance.AdminYourDeptBalanceDetDto;
-import com.company.kotlinapp_apis.model.finance.AdminYourDeptBalanceDet;
+import com.company.kotlinapp_apis.model.finance.CourierYourDeptBalanceDet;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class AdminYourDeptBalanceDetImpl {
 
     //ALL
     public List<AdminYourDeptBalanceDetDto> getAllAdminYourDeptBalanceDets() {
-        List<AdminYourDeptBalanceDet> list = repository.findAll();
+        List<CourierYourDeptBalanceDet> list = repository.findAll();
         return list.stream()
                 .map(det -> modelMapper.map(det, AdminYourDeptBalanceDetDto.class))
                 .toList();
@@ -30,22 +30,22 @@ public class AdminYourDeptBalanceDetImpl {
 
     //ById
     public AdminYourDeptBalanceDetDto getAdminYourDeptBalanceDetById(Long id) {
-        Optional<AdminYourDeptBalanceDet> optional = repository.findById(id);
+        Optional<CourierYourDeptBalanceDet> optional = repository.findById(id);
         return optional.map(det -> modelMapper.map(det, AdminYourDeptBalanceDetDto.class)).orElse(null);
     }
 
     //Save
     public AdminYourDeptBalanceDetDto saveAdminYourDeptBalanceDet(AdminYourDeptBalanceDetDto dto) {
-        AdminYourDeptBalanceDet det = modelMapper.map(dto, AdminYourDeptBalanceDet.class);
+        CourierYourDeptBalanceDet det = modelMapper.map(dto, CourierYourDeptBalanceDet.class);
         det = repository.save(det);
         return modelMapper.map(det, AdminYourDeptBalanceDetDto.class);
     }
 
     //Delete
     public Boolean deleteAdminYourDeptBalanceDet(Long id) {
-        Optional<AdminYourDeptBalanceDet> optional = repository.findById(id);
+        Optional<CourierYourDeptBalanceDet> optional = repository.findById(id);
         if (optional.isPresent()) {
-            AdminYourDeptBalanceDet det = optional.get();
+            CourierYourDeptBalanceDet det = optional.get();
             repository.delete(det);
             return true;
         }

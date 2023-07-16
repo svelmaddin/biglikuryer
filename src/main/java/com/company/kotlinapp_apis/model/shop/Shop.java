@@ -39,6 +39,7 @@ public class Shop {
     private String password;
 
     private String createdDate;
+    private String card;
 
     private Boolean trash;
 

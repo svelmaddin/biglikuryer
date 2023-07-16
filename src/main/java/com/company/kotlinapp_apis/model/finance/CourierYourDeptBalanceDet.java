@@ -12,11 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AdminYourDeptBalanceDet {
+public class CourierYourDeptBalanceDet {
 
     @Id
     private Long id;
-
+    private Long courierId; //
+    private Long shopId; //
     private Integer price;
     private String date;
     private String time;

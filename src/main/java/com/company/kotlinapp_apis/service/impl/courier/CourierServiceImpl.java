@@ -26,7 +26,7 @@ public class CourierServiceImpl implements CourierServiceInter {
     @Override
     public ResponseEntity<CourierDto> createCourier(CourierDto courierDto) {
         Courier courierEntity = modelMapper.map(courierDto, Courier.class);
-        if(isCourierEmailTaken(courierEntity.getEmail())) {
+        if (isCourierEmailTaken(courierEntity.getEmail())) {
             return ResponseEntity.badRequest().build();
         }
         courierEntity.setIsDisable(false);
@@ -52,7 +52,7 @@ public class CourierServiceImpl implements CourierServiceInter {
     @Override
     public CourierDto getCourierById(Long id) {
         Courier entity = courierRepository.findById(id).orElseGet(() -> null);
-        if(entity != null) {
+        if (entity != null) {
             return modelMapper.map(entity, CourierDto.class);
         }
         return null;
@@ -66,7 +66,7 @@ public class CourierServiceImpl implements CourierServiceInter {
     @Override
     public CourierDto findCourierByEmail(String email) {
         Courier courier = courierRepository.findCourierByEmail(email);
-        if(courier != null) {
+        if (courier != null) {
             return modelMapper.map(courier, CourierDto.class);
         }
         return null;
@@ -90,8 +90,8 @@ public class CourierServiceImpl implements CourierServiceInter {
             if (courierDto.getPhoneNumber() != null) {
                 courier.setPhoneNumber(courierDto.getPhoneNumber());
             }
-            if (courierDto.getCurrentBalance() != null) {
-                courier.setCurrentBalance(courierDto.getCurrentBalance());
+            if (courierDto.getStar() != null) {
+                courier.setStar(courierDto.getStar());
             }
             if (courierDto.getLocation() != null) {
                 courier.setLocation(courierDto.getLocation());

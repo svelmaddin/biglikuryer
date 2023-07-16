@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/adminYourDeptBalanceDets")
+@RequestMapping("/api/v1/courierYourDeptBalanceDets")
 public class AdminYourDeptBalanceDetController {
 
     private final AdminYourDeptBalanceDetImpl service;
@@ -18,7 +18,7 @@ public class AdminYourDeptBalanceDetController {
     }
 
     @GetMapping
-    public ResponseEntity<List<AdminYourDeptBalanceDetDto>> getAllAdminYourDeptBalanceDet() {
+    public ResponseEntity<List<AdminYourDeptBalanceDetDto>> getAllCourierYourDeptBalanceDet() {
         List<AdminYourDeptBalanceDetDto> all = service.getAllAdminYourDeptBalanceDets();
         return ResponseEntity.ok(all);
     }
@@ -33,16 +33,16 @@ public class AdminYourDeptBalanceDetController {
     }
 
     @PostMapping
-    public ResponseEntity<AdminYourDeptBalanceDetDto> saveAdminYourDeptBalanceDet(@RequestBody AdminYourDeptBalanceDetDto dto) {
+    public ResponseEntity<AdminYourDeptBalanceDetDto> saveCourierYourDeptBalanceDet(@RequestBody AdminYourDeptBalanceDetDto dto) {
         AdminYourDeptBalanceDetDto created = service.saveAdminYourDeptBalanceDet(dto);
         return ResponseEntity.ok(created);
     }
 
     @DeleteMapping("/{detId}")
-    public ResponseEntity<String> deleteAdminYourDeptBalanceDet(@PathVariable("detId") Long id) {
+    public ResponseEntity<String> deleteCourierYourDeptBalanceDet(@PathVariable("detId") Long id) {
         Boolean deleted = service.deleteAdminYourDeptBalanceDet(id);
         if (deleted) {
-            return ResponseEntity.ok("AdminYourDeptBalanceDet deleted successfully");
+            return ResponseEntity.ok("CourierYourDeptBalanceDet deleted successfully");
         }
         return ResponseEntity.notFound().build();
     }
