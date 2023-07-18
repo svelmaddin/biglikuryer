@@ -1,6 +1,5 @@
 package com.company.kotlinapp_apis.api.courier.controller;
 
-import com.company.kotlinapp_apis.dto.admin.AdminDto;
 import com.company.kotlinapp_apis.dto.courier.CourierDto;
 import com.company.kotlinapp_apis.service.impl.courier.CourierServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -21,19 +20,19 @@ public class CourierRegisterController {
 
     //CREATE
     @PostMapping
-    public ResponseEntity<?> createCourier(@RequestBody CourierDto courierDto){
+    public ResponseEntity<?> createCourier(@RequestBody CourierDto courierDto) {
         return courierServiceImpl.createCourier(courierDto);
     }
 
     //LIST
     @GetMapping
-    public List<CourierDto> getAllCouriers(){
+    public List<CourierDto> getAllCouriers() {
         return courierServiceImpl.getAllCouriers();
     }
 
     //ID
     @GetMapping("/{courierId}")
-    public ResponseEntity<?> getCourierById(@PathVariable("courierId") Long courierId){
+    public ResponseEntity<?> getCourierById(@PathVariable("courierId") Long courierId) {
         CourierDto courier = courierServiceImpl.getCourierById(courierId);
         if (courier != null) {
             return ResponseEntity.ok(courier);

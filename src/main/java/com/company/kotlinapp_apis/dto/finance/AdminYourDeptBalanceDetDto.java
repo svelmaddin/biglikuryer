@@ -13,7 +13,7 @@ public class AdminYourDeptBalanceDetDto {
 
     private Long id;
 
-    private Integer price;
+    private Double price;
     private Long courierId; //
     private Long shopId; //
     private String date;

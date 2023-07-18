@@ -17,7 +17,7 @@ public class AdminCurrentBalanceDet {
     @Id
     private Long id;
 
-    private Integer price;
+    private Double price;
     private String date;
     private Long courierId; //
     private Long shopId; //
