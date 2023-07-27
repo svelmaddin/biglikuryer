@@ -1,7 +1,6 @@
 package com.company.kotlinapp_apis.api.admin.controller;
 
 import com.company.kotlinapp_apis.dto.admin.AdminDto;
-import com.company.kotlinapp_apis.dto.courier.CourierDto;
 import com.company.kotlinapp_apis.service.impl.admin.AdminServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
