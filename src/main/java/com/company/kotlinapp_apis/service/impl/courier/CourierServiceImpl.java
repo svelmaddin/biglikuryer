@@ -31,7 +31,7 @@ public class CourierServiceImpl implements CourierServiceInter {
         }
         courierEntity.setIsDisable(false);
         courierEntity.setTrash(false);
-        courierEntity.setIsVerified(true);
+        courierEntity.setIsVerified(false);
         courierEntity.setOrderLock(false);
         Courier savedCourier = courierRepository.save(courierEntity);
         return ResponseEntity.ok(modelMapper.map(savedCourier, CourierDto.class));
