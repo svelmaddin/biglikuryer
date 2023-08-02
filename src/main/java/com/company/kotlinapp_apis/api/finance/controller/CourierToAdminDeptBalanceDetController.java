@@ -1,8 +1,6 @@
 package com.company.kotlinapp_apis.api.finance.controller;
 
-import com.company.kotlinapp_apis.dto.finance.CourierCurrentBalanceDetDto;
 import com.company.kotlinapp_apis.dto.finance.CourierToAdminDeptBalanceDetDto;
-import com.company.kotlinapp_apis.model.finance.CourierToAdminDeptBalanceDet;
 import com.company.kotlinapp_apis.service.impl.finance.CourierToAdminDeptBalanceDetImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

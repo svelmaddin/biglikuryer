@@ -31,6 +31,8 @@ public class CourierServiceImpl implements CourierServiceInter {
         }
         courierEntity.setIsDisable(false);
         courierEntity.setTrash(false);
+        courierEntity.setIsVerified(true);
+        courierEntity.setOrderLock(false);
         Courier savedCourier = courierRepository.save(courierEntity);
         return ResponseEntity.ok(modelMapper.map(savedCourier, CourierDto.class));
     }
@@ -98,6 +100,12 @@ public class CourierServiceImpl implements CourierServiceInter {
             }
             if (courierDto.getFamilyPhoneNumber() != null) {
                 courier.setFamilyPhoneNumber(courierDto.getFamilyPhoneNumber());
+            }
+            if (courierDto.getIsVerified() != null) {
+                courier.setIsVerified(courierDto.getIsVerified());
+            }
+            if (courierDto.getOrderLock() != null) {
+                courier.setOrderLock(courierDto.getOrderLock());
             }
             if (courierDto.getOneSignal() != null) {
                 courier.setOneSignal(courierDto.getOneSignal());

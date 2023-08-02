@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Table
 @Entity
@@ -31,6 +32,8 @@ public class Courier {
 
     private String familyPhoneNumber;
     private Boolean star; //
+    private Boolean isVerified;
+    private Boolean orderLock;
 
     private String oneSignal;//deviceId
 
