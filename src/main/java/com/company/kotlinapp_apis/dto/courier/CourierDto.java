@@ -24,8 +24,8 @@ public class CourierDto {
     private String phoneNumber;
 
     private String familyPhoneNumber;
-    private Boolean isVerified;
-    private Boolean orderLock;
+//    private Boolean isVerified;
+//    private Boolean orderLock;
 
     private String oneSignal;//deviceId
 

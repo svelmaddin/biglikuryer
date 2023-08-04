@@ -31,10 +31,7 @@ public class Courier {
     private String location;
 
     private String familyPhoneNumber;
-    private Boolean star; //
-    private Boolean isVerified;
-    private Boolean orderLock;
-
+    private Boolean star;//
     private String oneSignal;//deviceId
 
     @Column(unique = true, nullable = false)
