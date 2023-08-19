@@ -22,12 +22,6 @@ public class CourierToAdminDeptBalanceDetImpl {
         this.modelMapper = modelMapper;
     }
 
-    //getAllCourierToAdminDeptBalance
-    //getCourierCurrentBalanceDetById
-    //saveCourierCurrentBalanceDet
-    //deleteCourierCurrentBalanceDet
-
-
     //ALL
     public List<CourierToAdminDeptBalanceDetDto> getAllCourierToAdminDeptBalanceDet() {
         return repository.findAll().stream().map(x -> modelMapper.map(x, CourierToAdminDeptBalanceDetDto.class))
